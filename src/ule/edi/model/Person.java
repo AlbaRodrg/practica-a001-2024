@@ -40,11 +40,22 @@ public class Person {
 		return "{ NIF: "+ nif + "  Name : " + name + ", Age:" + age + "}";
 	}
 	
-    @Override
+     @Override
 	public boolean equals(Object obj) {
+	
 		// TODO Auto-generated method stub
 		// Dos personas son iguales si son iguales sus nifs
-		return false;	
+    	
+    	if ( this == obj) {
+    		return true;
+    	}
+    	if(obj instanceof Person) {
+    			Person other = (Person) obj;
+    			return(this.getNif().equals(other.getNif()));
+    	}
+    	
+		return false;
+	
 	}
 	
 }
